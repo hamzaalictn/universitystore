@@ -1,9 +1,9 @@
-Smartbearsoftware  : Cucumber Selenium FrameWork
+DANGELSIN  : Cucumber Selenium FrameWork
 ============================
 
 Copyright/Licensing Information : READ LICENSE
 ---
-Project source can be downloaded from : https://github.com/hamzaalictn/smartbearsoftware.git
+Project source can be downloaded from : https://github.com/hamzaalictn/dangelsin.git
 
 Author
 --------
@@ -13,9 +13,7 @@ Hamza Ali CETIN
 Aim
 --------
 
-The Dover Fueling Solutions Assessment Project is created to provide an example of a test automation framework.
-
-
+The aim of developing the DANGELSIN test automation framework is to enhance the quality of the Dangelsin Web Application by enabling reliable and efficient testing processes. The framework intends to reduce the time and cost of testing while simultaneously increasing the accuracy and thoroughness of test coverage. Ultimately, the project aims to improve the overall software quality and user experience, leading to increased customer satisfaction. Additionally, the framework promotes the use of industry-standard tools and practices for test automation to help organizations stay competitive in the rapidly evolving software development industry.
 
 Test Executions
 -------- 
@@ -24,7 +22,7 @@ Prerequisites: Maven and Java installation
 
 In order to start the tests by using Maven in your local computer, you need to follow these steps:
 
-	1) Download the project from : https://github.com/hamzaalictn/smartbearsoftware.git 
+	1) Download the project from : https://github.com/hamzaalictn/dangelsin.git
 	2) Open the command prompt and cd until the project root directory
 	3) Run the following command in the command prompt: mvn test
 
@@ -34,10 +32,7 @@ In order to start the tests by using Maven in your local computer, you need to f
 Overview
 --------
 
-I've decided to create a sample Cucumber Framework and share my approach to creation from scratch. In this project I have worked on http://secure.smartbearsoftware.com/samples/testcomplete12/weborders website which is a public site developed by SmartBear Software for testing purposes. The tools, the design and the benefits are written below.
-
-This project should be treated as a continual work in progress. I hope this will help you to better understand Java and Selenium concepts, and Cucumber framework regardless of your current knowledge or interest level in test automation. Programming is one of my greatest joys and, if it isn't already one of yours, perhaps this will bring you one step closer.
-
+The DANGELSIN test automation framework is designed to comprehensively test the e-commerce website, Dangelsin, which sells various types of products. The framework incorporates industry-standard tools and practices for test automation and employs the page object model and page factory design to enhance maintainability and reusability. The framework uses Selenium WebDriver for browser automation and JUnit for unit testing. Moreover, the framework implements the behavior-driven development (BDD) approach, allowing expected software behaviors to be specified in a language understandable to customers. The framework generates detailed Cucumber HTML reports that provide insights into test results and enable easy tracking of defects. By using the DANGELSIN test automation framework, organizations can efficiently and effectively test the Dangelsin e-commerce website, ensuring high-quality performance, user experience, and customer satisfaction.
 
 
 Tools
@@ -47,7 +42,7 @@ Java - My framework is written using Java language, 8 version.
 
 Maven - My framework is created as a maven project, maven is a Java building application tool, in this project I have used maven to manage dependencies and also run our tests as mvn goals from terminal
 
-Selenium WebDriver - Is the browser automation library/tool/api  which I have usedin this project.
+Selenium WebDriver - Is the browser automation library/tool/api  which I have used in this project.
 
 JUnit  - Is a unit testing framework for the Java programming language. JUnit has been important in the development of test-driven development
 
@@ -107,7 +102,7 @@ My framework can test the UI, database and API of the application.
 
 6) Packaging:
 
-I have create different packages for different types of classes and logic. Each page package only contains classes with same functionality.
+I have created different packages for different types of classes and logic. Each page package only contains classes with same functionality.
 
 7) Naming conventions:
 
@@ -124,6 +119,5 @@ NOTE : Test reports are intentionally loaded to remote repo for practice purpose
 
 
 
-#   s m a r t b e a r s o f t w a r e 
- 
+#   D a n g e l s i n 
  

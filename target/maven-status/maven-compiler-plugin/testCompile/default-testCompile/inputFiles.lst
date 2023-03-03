@@ -1,0 +1,17 @@
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/step_definitions/BaseStep.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/PropertyFileReader.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/pages/OrderPage.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/ConfigurationReader.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/runners/CukesRunner.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/pages/WebOrdersPage.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/pages/BasePage.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/pages/LoginPage.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/CommonExcelReader.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/DateTimeStampGenerator.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/DBUtils.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/Pages.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/step_definitions/Hooks.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/BrowserUtils.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/Driver.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/utilities/APIUtils.java
+/Users/Hamza/IdeaProjects/dangelsin/src/test/java/com/dangelsin/step_definitions/LoginProcessStepDefs.java

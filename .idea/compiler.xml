@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="com.dover.assesment" />
         <module name="Dover_Assesment" />
+        <module name="dangelsin" />
       </profile>
     </annotationProcessing>
   </component>
