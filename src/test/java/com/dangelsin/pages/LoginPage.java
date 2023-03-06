@@ -1,6 +1,7 @@
 package com.dangelsin.pages;
 
 import com.dangelsin.utilities.ConfigurationReader;
+import com.dangelsin.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

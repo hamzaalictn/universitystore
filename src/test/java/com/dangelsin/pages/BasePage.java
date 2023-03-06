@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 
 public class BasePage {
     protected WebDriver driver = Driver.getDriver();
@@ -16,10 +16,7 @@ public class BasePage {
 
     public BasePage(){
         PageFactory.initElements(driver,this);
-        driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-    public void navigateTo(String component) {
-        String locator = "//a[text() = '" + component + "']";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
-    }
+
 }

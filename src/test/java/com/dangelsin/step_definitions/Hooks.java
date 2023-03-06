@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 import java.sql.SQLException;
 
 public class Hooks {
@@ -24,6 +25,7 @@ public class Hooks {
         logger.info("Test scenario :: {}", scenario.getName());
         Driver.getDriver().manage().window().maximize();
     }
+
 
     @Before("@db")
     public void setupDbConnection(Scenario scenario) {

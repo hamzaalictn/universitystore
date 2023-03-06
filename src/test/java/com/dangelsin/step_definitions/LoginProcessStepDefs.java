@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+
 public class LoginProcessStepDefs extends BaseStep {
     @Given("the user navigates to login page")
     public void the_user_navigates_to_login_page() {
@@ -28,6 +29,7 @@ public class LoginProcessStepDefs extends BaseStep {
 
     @When("the user enters password as {string}")
     public void user_enters_password_as(String passwordValue) {
+
         pages.loginPage().enterPasswordValue(passwordValue);
 
     }
@@ -35,7 +37,6 @@ public class LoginProcessStepDefs extends BaseStep {
     @When("the user enters username {string}")
     public void user_enters_username(String usernameValue) {
         pages.loginPage().enterUserNameValue(usernameValue);
-
     }
 
 

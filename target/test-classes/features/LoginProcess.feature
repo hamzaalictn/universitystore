@@ -20,6 +20,7 @@ Feature: Product Login
     Then the user arrives at the home page and welcome text containing the username "Tester"
 
 
+    @Mehmet
   Scenario: The user attempts to log in with invalid credentials
   This scenario tests that a user is not able to log in when they enter invalid credentials.
 
