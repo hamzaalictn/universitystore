@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="zeber" />
         <module name="com.dover.assesment" />
         <module name="Dover_Assesment" />
-        <module name="zeber" />
+        <module name="universitystore" />
       </profile>
     </annotationProcessing>
   </component>
