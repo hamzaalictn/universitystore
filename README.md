@@ -28,7 +28,6 @@ In order to start the tests by using Maven in your local computer, you need to f
 
 
 
-
 Overview
 --------
 
@@ -38,20 +37,19 @@ The ZEBER test automation framework is designed to comprehensively test the e-co
 Tools
 -------
 
-Java - My framework is written using Java language, 8 version.
+`Java` - My framework is written using Java language, 17 version.
 
-Maven - My framework is created as a maven project, maven is a Java building application tool, in this project I have used maven to manage dependencies and also run our tests as mvn goals from terminal
+`Maven` - My framework is a Maven project, which is a Java build application tool that I use to manage dependencies and run tests from the endpoint as Maven goals. This allows me to streamline the process of managing dependencies and running tests.
 
-Selenium WebDriver - Is the browser automation library/tool/api  which I have used in this project.
+`Selenium WebDriver` - This is a tool and library used for browser automation that I have implemented in this project. It allows me to automate browser actions such as clicking buttons, filling out forms, and navigating pages to perform automated tests.
 
-JUnit  - Is a unit testing framework for the Java programming language. JUnit has been important in the development of test-driven development
+`Cucumber` - I used Cucumber to perform behavior-driven development (BDD) in my project. Gherkin allows me to specify the expected behaviors of the software in a logical language that anyone can understand. Cucumber runs automated acceptance tests that are written in a behavior-driven development (BDD) style, which streamlines the testing process and ensures that the software meets the expected requirements.
 
-Cucumber - I used cucumber to achieve behavior-driven development (BDD). With Gherkin, it allows expected software behaviours to be specified in a logical language that customers can understand. And It runs automated acceptance tests written in a behavior-driven development (BDD) style.
+`JUnit` - It is a unit testing framework for Java that helps write and run automated unit tests, and has been instrumental in the development of test-driven development.
 
+`Extent` - I've used Extent (an open-source reporting library used in Java-based automation frameworks) to generate detailed Cucumber HTML reports that are easy for non-technical team members to read and understand. These reports include detailed test steps and screenshots for any test failures that may occur, which helps to identify issues and troubleshoot them quickly. Additionally, with a small adjustment, the reports can also provide metrics on the percentage of passing, failing, skipped tests, etc.
 
-Extent - My framework generates detailed Cucumber-html reports which makes it is easy to read and understand to non-technical team members. My reports have details test steps and screenshots for any failures that may occur. If requested with a small adjustment, it can also make metrics on the percentage of passing, failing, skipped, etc.
-
-IDE - I used IntelliJ in my current framework.
+`IDE` - I have used IntelliJ as my integrated development environment (IDE).
 
 
 
@@ -59,18 +57,19 @@ IDE - I used IntelliJ in my current framework.
 Design
 -------
 
-Page Object model - My framework used page object model according to which I created a separate classes for the pages of my application. All the pages are in pages folder.
+`Page Object model` - In my framework, we adopted the Page Object Model design for our automated tests. This model involves creating a separate class for each page in our web application, which is stored in the "pages" folder. By using the Page Object Model, I was able to separate my test code from the code that defines the elements and actions of each page. This allows us to create a more organized and scalable testing framework that can easily adapt to changes in our web application. In addition, the page object model helps in writing tests that are easier to maintain and reuse, which improves the overall quality of our test suite.
 
-PageFactory design - a design which makes it easy to access the page object class. I created a Pages class that enables access to each pages by calling the related methods. Page Factory in Selenium is a built-in Page Object Model framework concept for Selenium WebDriver but it is highly optimised.
+`PageFactory Design Pattern` - It is a design pattern in Selenium WebDriver that enables me to create object repositories for my web application's pages. Each page is represented by a Java class with elements and actions mapped using annotations. This design pattern makes it easier to access page objects and maintain my tests, and is highly optimized for use in Selenium WebDriver.
 
-Singleton Driver - My frameworks use a singleton pattern to share the Web Driver instance between different classes.
+`Singleton Driver` - The Singleton Driver design pattern in Selenium uses a single instance of the WebDriver object that is shared between different classes in my test framework. This pattern helps improve test efficiency by avoiding the overhead of creating multiple WebDriver instances, and also makes it easier to manage the lifecycle of the WebDriver object. By using a Singleton Driver pattern, I can ensure that your tests are efficient, reliable, and easy to maintain.
 
-Hooks - My framework has a Hook Class which are blocks of code that can run at various points in the Cucumber execution cycle. They are typically used for setup and teardown of the environment before and after each scenario.
+`Webdriver Manager` - By using WebDriverManager in the framework, I was able to save time on browser driver management and improve the reliability of my tests by ensuring that the correct driver version was used.
 
-Configuration file - I used to store the important test data. Such as username, password, etc.
+`Hooks` - In my framework, I've implemented a Hook Class which contains blocks of code that can be executed at various points in the Cucumber execution cycle. These blocks of code are commonly used for setting up the environment before each scenario runs, and tearing it down after each scenario completes. Hooks provide a convenient and efficient way to automate repetitive setup and teardown tasks, such as initializing test data, starting and stopping a web server, or cleaning up after a test run.
 
-Utilities - have reusable utilities that are being used from different classes of my framework.
+`Centralized Configuration Data` - I have implemented a Configuration file that stores important test data, such as usernames, passwords, and other configurations. The Configuration file provides a centralized location for storing and managing this data, making it easy to update and maintain. Storing test data in a Configuration file reduces the amount of hard-coded data in my test code, which improves readability and maintainability.
 
+`Utilities` - I've created a utils package in my framework, which contains reusable classes like BrowserUtils and DBUtils. These classes provide common functionality that can be used across different parts of the framework, such as interacting with the browser or working with databases. Using these Utilities helps reduce code duplication and improve the efficiency and maintainability of my tests.
 
 
 
@@ -79,22 +78,19 @@ Benefits
 
 1) Easy to maintain:
 
-My framework uses page object model which makes it easy to maintain. For example if i have to update any locator, I only need to do one code change.
-I try to make my tests independent from each other, this means if I update one test, it will not affect others and also if one fails, others will not be affected.
-
-
+My framework uses the page object model, which simplifies maintenance. For instance, if I need to update any locator, I only need to make one code change. I also strive to make my tests independent from each other, so if I update one test, it will not impact others, and if one test fails, it will not affect the others.
 
 2) Easy to extend:
 
-It is easy to add new test cases to my framework, and new pages. The design is smooth and clear.
+I've implemented the page object model and utilities that can be reused across tests. For instance, I have the "waitForClickablility" method that waits until an element is clickable for a given amount of time before throwing an exception. Instead of repeating these lines of code in multiple tests, I store them as static methods in the BrowserUtils page, making them publicly accessible.
 
-3) Easy to reuse:
+4) Easy to reuse:
 
 I have page object model, utilities which I can reuse for any tests. For example, I have the "waitForClickablility" method which takes the WebElement and timeout length as parameter an waits until the element is clickable for the givent time before throwing exception. Instead of repeating this lines of codes in the test classes, I have stored them in BrowserUtils page as static methods and they are accessible to public.
 
 4) Multi browser testing:
 
-My framework can run the same tests against different browsers with minimal code change.
+My framework can run the same tests on different browsers with minimal code changes.
 
 5) Types of tests:
 
@@ -102,17 +98,17 @@ My framework can test the UI, database and API of the application.
 
 6) Packaging:
 
-I have created different packages for different types of classes and logic. Each page package only contains classes with same functionality.
+I have created different packages for different types of classes and logic. Each page package only contains classes with similar functionality.
 
 7) Naming conventions:
 
-I do pay a lot of attention to coding standards, especially naming conventions. Classes, methods variable are named on based on what they do and follow a standard
+I pay close attention to coding standards, especially naming conventions. Classes, methods, and variables are named according to their functionality and follow a standard.
 
-Page object class:
-homePage, loginPage
-variable: loginButton, signOutLink
-methods: login(): this methods only used to login, not for any other functionality.
+`Page Object Clases`: homePage, loginPage
 
+`Variable`: loginButton, signOutLink
+
+`methods`: login(): this methods only used to login, not for any other functionality.
 
 
 NOTE : Test reports are intentionally loaded to remote repo for practice purposes.
