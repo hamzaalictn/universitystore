@@ -1,19 +1,19 @@
-ZEBER  : Cucumber Selenium FrameWork
+UNIVERSITY STORE  : Cucumber Selenium FrameWork
 ============================
 
 Copyright/Licensing Information : READ LICENSE
 ---
-Project source can be downloaded from : https://github.com/hamzaalictn/zeber.git
+Project source can be downloaded from : https://github.com/hamzaalictn/universitystore.git
 
 Author
 --------
 Hamza Ali CETIN
 
 
-Aim
+Purpose 
 --------
 
-The aim of developing the ZEBER test automation framework is to enhance the quality of the Zeber Web Application by enabling reliable and efficient testing processes. The framework intends to reduce the time and cost of testing while simultaneously increasing the accuracy and thoroughness of test coverage. Ultimately, the project aims to improve the overall software quality and user experience, leading to increased customer satisfaction. Additionally, the framework promotes the use of industry-standard tools and practices for test automation to help organizations stay competitive in the rapidly evolving software development industry.
+The aim of developing the University Store test automation framework is to enhance the quality of the University Store Web Application by enabling reliable and efficient testing processes. The framework intends to reduce the time and cost of testing while simultaneously increasing the accuracy and thoroughness of test coverage. Ultimately, the project aims to improve the overall software quality and user experience, leading to increased customer satisfaction. Additionally, the framework promotes the use of industry-standard tools and practices for test automation to help organizations stay competitive in the rapidly evolving software development industry.
 
 Test Executions
 -------- 
@@ -22,7 +22,7 @@ Prerequisites: Maven and Java installation
 
 In order to start the tests by using Maven in your local computer, you need to follow these steps:
 
-	1) Download the project from : https://github.com/hamzaalictn/zeber.git
+	1) Download the project from : https://github.com/hamzaalictn/universitystore.git
 	2) Open the command prompt and cd until the project root directory
 	3) Run the following command in the command prompt: mvn test
 
@@ -31,7 +31,7 @@ In order to start the tests by using Maven in your local computer, you need to f
 Overview
 --------
 
-The ZEBER test automation framework is designed to comprehensively test the e-commerce website, ZEBER, which sells various types of products. The framework incorporates industry-standard tools and practices for test automation and employs the page object model and page factory design to enhance maintainability and reusability. The framework uses Selenium WebDriver for browser automation and JUnit for unit testing. Moreover, the framework implements the behavior-driven development (BDD) approach, allowing expected software behaviors to be specified in a language understandable to customers. The framework generates detailed Cucumber HTML reports that provide insights into test results and enable easy tracking of defects. By using the ZEBER test automation framework, organizations can efficiently and effectively test the ZEBER e-commerce website, ensuring high-quality performance, user experience, and customer satisfaction.
+The University Store test automation framework is designed to comprehensively test the e-commerce website, University Store, which sells various types of products. The framework incorporates industry-standard tools and practices for test automation and employs the page object model and page factory design to enhance maintainability and reusability. The framework uses Selenium WebDriver for browser automation and JUnit for unit testing. Moreover, the framework implements the behavior-driven development (BDD) approach, allowing expected software behaviors to be specified in a language understandable to customers. The framework generates detailed Cucumber HTML reports that provide insights into test results and enable easy tracking of defects. By using the University Store test automation framework, organizations can efficiently and effectively test the University Store e-commerce website, ensuring high-quality performance, user experience, and customer satisfaction.
 
 
 Tools
@@ -115,5 +115,5 @@ NOTE : Test reports are intentionally loaded to remote repo for practice purpose
 
 
 
-#   Z E B E R 
+#   U N I V E R S I T Y -  S T O R E  
  
