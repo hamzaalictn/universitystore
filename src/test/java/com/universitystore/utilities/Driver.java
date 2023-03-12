@@ -8,10 +8,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 import java.io.File;
+import java.io.FileInputStream;
 import java.nio.file.Paths;
+import java.security.KeyStore;
 
 public class Driver {
 
@@ -67,23 +73,9 @@ public class Driver {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.setCapability("browser.download.folderList", 2);
-        options.setCapability("browser.download.dir", DOWNLOAD_DIR);
-        options.setCapability("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
-
-        // Load certificate file and set up SSL
-        options.setCapability("security.enterprise_roots.enabled", true);
-        options.setCapability("profile.default_content_settings.popups", 0);
-        options.setCapability("download.default_directory", DOWNLOAD_DIR);
-        options.setCapability("download.prompt_for_download", false);
-        options.setCapability("download.directory_upgrade", true);
-        options.setCapability("download.extensions_to_open", "");
-
-        // Load certificate file and set up SSL
-        File certificateFile = new File(CERTIFICATE_PATH);
-        options.setCapability("ssl.client_certificate", certificateFile.getAbsolutePath());
-        options.setCapability("ssl.client_key_passphrase", CERTIFICATE_PASSWORD);
-
+        options.addArguments("--allow-insecure-localhost");
+        options.addArguments("--ssl-client-cert=" + "pfxFilePath");
+        options.addArguments("--ssl-client-key-passphrase=" + "pfxPassword");
         return new ChromeDriver(options);
     }
 

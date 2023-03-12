@@ -312,6 +312,14 @@ public class BrowserUtils {
         }
     }
 
+    public static void acceptAlert(WebDriver driver) {
+        // Create a new instance of JavascriptExecutor and cast the driver to it
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Use the executeScript() method to accept the alert
+        js.executeScript("window.alert = function() {}; window.confirm = function() {return true;}; window.prompt = function() {return null;};");
+    }
+
 
 }
 
