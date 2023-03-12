@@ -1,4 +1,4 @@
-package com.dangelsin.runners;
+package com.universitystore.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/dangelsin/step_definitions",
-        tags = "@hamza",
+        tags = "@login_Valid_Credentials",
         dryRun = false
 
 )

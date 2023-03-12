@@ -1,8 +1,8 @@
-package com.dangelsin.step_definitions;
+package com.universitystore.step_definitions;
 
-import com.dangelsin.utilities.BrowserUtils;
-import com.dangelsin.utilities.ConfigurationReader;
-import com.dangelsin.utilities.Driver;
+import com.universitystore.utilities.BrowserUtils;
+import com.universitystore.utilities.ConfigurationReader;
+import com.universitystore.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
