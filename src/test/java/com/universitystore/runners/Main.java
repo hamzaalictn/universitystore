@@ -5,23 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
-    File clientSslCertificate = new File("path/to/client/certificate.p12");
-    String certificatePassword = "certificate_password";
+    public static void main(String[] args) {
+        ChromeOptions options = new ChromeOptions();
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.content_settings.exceptions.certificate_errors.<your-website-domain>",ImmutableMap.of("certificate_file", "<path-to-pfx-file>", "password", "<pfx-password>"));
+        options.setCapability("chrome.prefs", prefs);
+    }
 
-    SeleniumSslProxy sslProxy = new SeleniumSslProxy(clientSslCertificate, certificatePassword);
-        sslProxy.start();
 
-    InetSocketAddress proxyAddress = (InetSocketAddress) sslProxy.browserMobProxy().getServer().getListenAddress();
-    String proxyStr = String.format("%s:%d", proxyAddress.getHostString(), proxyAddress.getPort());
-    Proxy seleniumProxy = new Proxy().setHttpProxy(proxyStr).setSslProxy(proxyStr);
-
-    ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setProxy(seleniumProxy);
-    WebDriver driver = new ChromeDriver(chromeOptions);
-
-    // Use the driver as needed
-
-        driver.quit();
-        sslProxy.stop();
 }
