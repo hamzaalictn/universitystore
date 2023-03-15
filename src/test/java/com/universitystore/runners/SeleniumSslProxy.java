@@ -90,12 +90,13 @@ public class SeleniumSslProxy extends Proxy {
             keyManagerFactory.init(keyStore, certificatePassword.toCharArray());
             KeyManager[] keyManagers = keyManagerFactory.getKeyManagers();
 
-            TrustManager[] trustManagers = new TrustManager[] { TrustAllCertsTrustManager.INSTANCE };
+            TrustManager[] trustManagers = new TrustManager[]{TrustAllCertsTrustManager.INSTANCE};
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(keyManagers, trustManagers, new SecureRandom());
 
             return sslContext;
-        } catch (IOException | KeyStoreException | NoSuchAlgorithmException | CertificateException | UnrecoverableKeyException | KeyManagementException e) {
+        } catch (IOException | KeyStoreException | NoSuchAlgorithmException | CertificateException |
+                 UnrecoverableKeyException | KeyManagementException e) {
             e.printStackTrace();
         }
         return null;
@@ -106,7 +107,7 @@ public class SeleniumSslProxy extends Proxy {
         HttpVersion httpVersion = HttpVersion.valueOf(okhttpResponse.protocol().toString());
 
         ByteBuf content = null;
-        try (ResponseBody body = okhttpResponse.body()){
+        try (ResponseBody body = okhttpResponse.body()) {
             content = Unpooled.wrappedBuffer(body.bytes());
         } catch (IOException e) {
             e.printStackTrace();
@@ -138,3 +139,4 @@ public class SeleniumSslProxy extends Proxy {
             return new X509Certificate[0];
         }
     }
+}
