@@ -1,10 +1,12 @@
 package com.universitystore.runners;
+import com.google.common.collect.ImmutableMap;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.chrome.ChromeOptions;
-import com.google.common.collect.ImmutableMap;
 
 public class SSLClientAuthExample {
 
@@ -14,12 +16,13 @@ public class SSLClientAuthExample {
         String pfxPassword = "myPFXPassword";
         String websiteDomain = "www.example.com";
 
-        // Set SSL client certificate configuration using Chrome preferences
+        // Set SSL client certificate configuration using UserPreferences
         Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("certificate_manager.policy", 2);
         prefs.put("profile.content_settings.exceptions.certificate_errors." + websiteDomain,
                 ImmutableMap.of("certificate_file", pfxFilePath, "password", pfxPassword));
         ChromeOptions options = new ChromeOptions();
-        options.setCapability("chrome.prefs", prefs);
+        options.setExperimentalOption("prefs", prefs);
 
         // Or alternatively, set SSL client certificate file and password directly in ChromeOptions
         /*
@@ -28,10 +31,7 @@ public class SSLClientAuthExample {
         options.addArguments("--ssl-client-key-passphrase=" + pfxPassword);
         */
 
-        MutableCapabilities capabilities = new MutableCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
         // Create WebDriver instance with the desired capabilities
-        // WebDriver driver = new ChromeDriver(capabilities);
+        WebDriver driver = new ChromeDriver(options);
     }
 }
