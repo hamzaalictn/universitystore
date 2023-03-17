@@ -14,12 +14,16 @@ public class CucumberReportCopier {
 
         // Specify the paths of the source and destination directories
         Path sourceDirectory = Paths.get("path/to/source/directory");
-        Path destinationDirectory = Paths.get("path/to/destination/directory");
 
         // Get the current date and format it as "yyyyMMdd"
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         String dateString = dateFormatter.format(currentDate);
+
+        // Create the report directory with the current date in the folder name
+        String reportDirectoryName = "report_" + dateString;
+        Path reportDirectory = sourceDirectory.getParent().resolve(reportDirectoryName);
+        Files.createDirectories(reportDirectory);
 
         // Get a list of all files in the source directory
         List<File> files = Files.walk(sourceDirectory)
@@ -27,10 +31,10 @@ public class CucumberReportCopier {
                 .map(Path::toFile)
                 .toList();
 
-        // Copy each file to the destination directory with the current date in the file name
+        // Copy each file to the report directory with the current date in the file name
         for (File file : files) {
             Path sourcePath = file.toPath();
-            Path destinationPath = destinationDirectory.resolve(sourceDirectory.relativize(sourcePath));
+            Path destinationPath = reportDirectory.resolve(sourceDirectory.relativize(sourcePath));
             Path destinationParentPath = destinationPath.getParent();
             String destinationFileName = destinationPath.getFileName().toString();
             int lastDotIndex = destinationFileName.lastIndexOf('.');
@@ -45,6 +49,6 @@ public class CucumberReportCopier {
             Files.copy(sourcePath, updatedDestinationPath);
         }
 
-        System.out.println("Cucumber report copied successfully to destination directory!");
+        System.out.println("Cucumber report copied successfully to report directory!");
     }
 }
