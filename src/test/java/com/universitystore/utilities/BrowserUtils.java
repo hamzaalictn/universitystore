@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.util.Date;
 import java.util.NoSuchElementException;
@@ -49,6 +53,41 @@ public class BrowserUtils {
             e.printStackTrace();
         }
         return path;
+    }
+
+
+    /**
+     * Takes a screenshot of the current web page and returns the file path of the screenshot.
+     *
+     * @param name The name to be given to the screenshot file.
+     * @return The file path of the screenshot.
+     */
+    public static String getScreenshot_01(String name) {
+        // Adding date and time to the screenshot name to make it unique
+        name = new Date().toString().replace(" ", "_").replace(":", "-") + "_" + name;
+        String osName = System.getProperty("os.name").toLowerCase();
+        Path screenshotsPath = Paths.get("test-output", "screenshots");
+
+        // Determining the file path based on the operating system
+        if (osName.contains("mac")) {
+            screenshotsPath = screenshotsPath.toAbsolutePath();
+        } else {
+            screenshotsPath = screenshotsPath.toAbsolutePath().normalize();
+        }
+
+        Path screenshotPath = screenshotsPath.resolve(name + ".png");
+
+        TakesScreenshot screenshot = (TakesScreenshot) Driver.getDriver();
+        File source = screenshot.getScreenshotAs(OutputType.FILE);
+        File destination = screenshotPath.toFile();
+        try {
+            Files.createDirectories(screenshotsPath);
+            Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return screenshotPath.toString();
     }
 
 
