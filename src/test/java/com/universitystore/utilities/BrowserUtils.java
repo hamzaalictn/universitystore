@@ -1,5 +1,6 @@
 package com.universitystore.utilities;
 
+import groovy.util.logging.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -23,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * A utility class containing helper methods for common browser related operations.
  */
-
+@Slf4j
 public class BrowserUtils {
 
 

@@ -70,12 +70,14 @@ public class Driver {
     }
 
     public static ChromeDriver createChromeDriverWithSSL() {
-        WebDriverManager.chromedriver().setup();
+        String pfxFilePath="certificate";
+        String pfxPassword="password";
 
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-insecure-localhost");
-        options.addArguments("--ssl-client-cert=" + "pfxFilePath");
-        options.addArguments("--ssl-client-key-passphrase=" + "pfxPassword");
+        options.addArguments("--ssl-client-cert=" + pfxFilePath);
+        options.addArguments("--ssl-client-key-passphrase=" + pfxPassword);
         return new ChromeDriver(options);
     }
 
