@@ -37,6 +37,4 @@ public class ConfigurationReader {
         return configFile.getProperty(keyName);
     }
 
-
-
 }
