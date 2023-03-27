@@ -42,6 +42,22 @@ public class Adhoc {
         HttpGet httpGet = new HttpGet("https://www.example.com");
         HttpResponse response = httpClient.execute(httpGet);
 
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet("https://www.example.com");
+        CloseableHttpResponse response = httpClient.execute(httpGet);
+
+        // Extract the session cookie from the response
+        Header[] headers = response.getHeaders("Set-Cookie");
+        String sessionCookie = headers[0].getValue();
+
+        // Set up Selenium WebDriver and navigate to the website
+        WebDriver driver = new ChromeDriver();
+        driver.manage().addCookie(new Cookie("session", sessionCookie, ".example.com", "/", null, false, true));
+        driver.get("https://www.example.com");
+
+
+
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.example.com");
         WebElement element = driver.findElement(By.name("q"));
