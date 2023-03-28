@@ -65,6 +65,18 @@ public class Adhoc {
 
 
 
+        try {
+            Robot robot = new Robot();
+            // Wait for the certificate selection popup to appear
+            Thread.sleep(2000);
+
+            // Press Enter to accept the certificate
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.example.com");
         WebElement element = driver.findElement(By.name("q"));
