@@ -42,7 +42,6 @@ public class Adhoc {
         HttpGet httpGet = new HttpGet("https://www.example.com");
         HttpResponse response = httpClient.execute(httpGet);
 
-
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("https://www.example.com");
         CloseableHttpResponse response = httpClient.execute(httpGet);
@@ -55,6 +54,14 @@ public class Adhoc {
         WebDriver driver = new ChromeDriver();
         driver.manage().addCookie(new Cookie("session", sessionCookie, ".example.com", "/", null, false, true));
         driver.get("https://www.example.com");
+
+
+
+        String pfxPath = "path/to/your/certificate.pfx";
+        String pfxPassword = "your-certificate-password";
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--client-certificate=" + pfxPath);
+        chromeOptions.addArguments("--ssl-client-certificate-password=" + pfxPassword);
 
 
 
