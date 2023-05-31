@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class DBUtils {
-    public static List<Map<String, Object>> executeQuery(String dbUrl, String dbUser, String dbPassword, String query) {
+    public static List<Map<String, Object>> executeQuery(String host, int port, String database, String dbUser, String dbPassword, String query) {
+        String dbUrl = String.format("jdbc:postgresql://%s:%d/%s", host, port, database);
+
         try (Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
