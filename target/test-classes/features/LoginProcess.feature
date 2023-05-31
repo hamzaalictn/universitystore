@@ -8,6 +8,7 @@ Feature: Product Login
   - The user must have a valid password
   - User will get a generic error message following login attempt with invalid credentials.
 
+
   @login_Valid_Credentials
   Scenario: The user successfully logs in with valid credentials.
   This scenario tests that a user is able to successfully login when they enter valid credentials.

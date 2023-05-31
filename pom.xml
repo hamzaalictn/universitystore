@@ -14,7 +14,6 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <!-- Dependency versions -->
-
         <selenium.version>4.8.1</selenium.version>
         <bonigarcia.webdrivermanager.version>5.1.1</bonigarcia.webdrivermanager.version>
 
@@ -186,6 +185,20 @@
                                 <param>**/cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>0.0.38</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <inherited>true</inherited>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

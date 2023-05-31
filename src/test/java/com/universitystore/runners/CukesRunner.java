@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"
         },
         features = "src/test/resources/features",
-        glue = "com/dangelsin/step_definitions",
+        glue = "com/universitystore/step_definitions",
         tags = "@login_Valid_Credentials",
         dryRun = false
 
